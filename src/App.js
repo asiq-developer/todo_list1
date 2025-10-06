@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react';
+import AddTodoForm from './components/AddTodoForm';
+import { ThemeContext } from './context/ThemeContext'; 
 
-function App() {
+
+const App = () => {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className={`app-container ${theme}`}>
+      <header>
+        <h2> Todo List</h2>
+        <button onClick={toggleTheme}>
+          Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
+        </button>
       </header>
+
+      <main>
+        <AddTodoForm />
+       
+      </main>
+         <footer>
+        <p>
+          Developed by <strong>Mohammed Asiq</strong> |{' '}
+          <a href="https://github.com/your-github-username" target="_blank" >
+            GitHub
+</a>
+        </p>
+      </footer>
+   
     </div>
   );
-}
+};
 
 export default App;
