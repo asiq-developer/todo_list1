@@ -6,10 +6,10 @@ export const useTodos = () => {
   const [filter, setFilter] = useState('all');
  
 
-  useEffect(() => {
-    const savedNames = JSON.parse(localStorage.getItem('names')) ;
-    setNames(savedNames);
-  }, []);
+ useEffect(() => {
+  const savedNames = JSON.parse(localStorage.getItem('names')) || [];
+  setNames(savedNames);
+}, []);
 
  
 
