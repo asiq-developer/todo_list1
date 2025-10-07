@@ -22,9 +22,10 @@ const App = () => {
          <footer>
         <p>
           Developed by <strong>Mohammed Asiq</strong> |{' '}
-          <a href="https://github.com/your-github-username" target="_blank" >
-            GitHub
+       <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">
+  GitHub
 </a>
+
         </p>
       </footer>
    
